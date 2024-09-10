@@ -97,7 +97,8 @@ pipeline {
       steps {
          withKubeConfig(caCertificate: "', clusterName: 'devopsshack-cluster', contextName:"",credentialsld: 'k8-token', namespace:
          'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://F731B4F591C557B3E5161DC2C03CD02B.gr7.us-east-1.eks.amazonaws.com')
-         sh "kubectl apply -f ds.yml -n webapps"
+         sh "kubectl get svc -n webapps"
+         sh "kubectl get pods -n webapps"
         sleep 30
        }
        }
